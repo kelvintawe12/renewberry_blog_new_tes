@@ -1,0 +1,148 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+@layer base {
+  body {
+    @apply font-body text-text-secondary bg-gray-50 antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-text-primary font-bold;
+  }
+}
+.prose p {
+  @apply mb-6 leading-relaxed text-lg;
+}
+.prose h2 {
+  @apply text-3xl mt-12 mb-6;
+}
+.prose h3 {
+  @apply text-2xl mt-8 mb-4;
+}
+.prose ul {
+  @apply list-disc pl-6 mb-6 space-y-2 text-lg;
+}
+.prose blockquote {
+  @apply border-l-4 border-primary pl-6 italic text-xl my-8 text-text-primary;
+}
+/* Custom Animations */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float 7s ease-in-out 2s infinite;
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+@keyframes blob-morph {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) scale(1); }
+  33% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: translate(30px, -50px) scale(1.1); }
+  66% { border-radius: 60% 30% 40% 70% / 60% 40% 70% 40%; transform: translate(-20px, 20px) scale(0.9); }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) scale(1); }
+}
+.animate-blob-morph {
+  animation: blob-morph 15s ease-in-out infinite;
+}
+.animate-blob-morph-delayed {
+  animation: blob-morph 18s ease-in-out 5s infinite;
+}
+/* Snap Scrolling Utilities */
+.snap-y-mandatory {
+  scroll-snap-type: y mandatory;
+}
+.snap-start {
+  scroll-snap-align: start;
+}
+/* Hide scrollbar for video feed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* New Animations */
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg); }
+}
+.animate-orbit {
+  animation: orbit 20s linear infinite;
+}
+@keyframes shimmer-card {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-shimmer-card {
+  animation: shimmer-card 2s infinite;
+}
+@keyframes pulse-play {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+  70% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+.animate-pulse-play {
+  animation: pulse-play 2s infinite;
+}
+@keyframes music-note {
+  0% { transform: translate(0, 0) scale(0.8) rotate(0deg); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translate(-20px, -40px) scale(1.2) rotate(-20deg); opacity: 0; }
+}
+.animate-music-note {
+  animation: music-note 2s linear infinite;
+}
+.animate-music-note-delayed {
+  animation: music-note 2s linear 1s infinite;
+}
+@keyframes ken-burns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+.animate-ken-burns {
+  animation: ken-burns 20s ease-in-out infinite alternate;
+}
+/* Threads Animation */
+.threads-container {
+  width: 100%;
+  height: 100%;
+}
+.threads-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
