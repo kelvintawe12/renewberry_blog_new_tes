@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { POSTS } from '../../data/mockData';
+import { Post, POSTS } from '../../data/mockData';
+import { postStorage } from '../../data/postStorage';
 import {
   SearchIcon,
   PlusIcon,
@@ -9,11 +10,27 @@ import {
   EyeIcon } from
 'lucide-react';
 export function CreatorArticles() {
-  // Simulate fetching only creator's articles
-  const [articles, setArticles] = useState(POSTS.slice(0, 5));
+  const [articles, setArticles] = useState<Post[]>(postStorage.getPosts());
   const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    // Merge mock posts with stored posts for demo purposes
+    const stored = postStorage.getPosts();
+    // For creator view, we might only want to show their posts
+    // But since we don't have a robust auth yet, we'll show all stored posts
+    // and a few mock posts.
+    setArticles([...stored, ...POSTS.slice(0, 5)]);
+  }, []);
+
+  const handleDelete = (id: string) => {
+    if (window.confirm('Are you sure you want to delete this article?')) {
+      postStorage.deletePost(id);
+      setArticles(postStorage.getPosts());
+    }
+  };
+
   const filteredArticles = articles.filter((a) =>
-  a.title.toLowerCase().includes(searchTerm.toLowerCase())
+    a.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
   return (
     <div className="space-y-6">
@@ -101,9 +118,10 @@ export function CreatorArticles() {
                         <Edit2Icon className="w-4 h-4" />
                       </Link>
                       <button
-                      className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                      title="Delete">
-
+                        onClick={() => handleDelete(article.id)}
+                        className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                        title="Delete"
+                      >
                         <Trash2Icon className="w-4 h-4" />
                       </button>
                     </div>

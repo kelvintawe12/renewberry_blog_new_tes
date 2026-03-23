@@ -15,12 +15,23 @@ export interface Author {
   role: string;
 }
 
+export interface PostSection {
+  id: string;
+  type: 'text' | 'image' | 'video' | 'quote' | 'callout';
+  title?: string;
+  content: string;
+  mediaUrl?: string;
+  mediaCaption?: string;
+}
+
 export interface Post {
   id: string;
   title: string;
   slug: string;
   excerpt: string;
-  content: string;
+  content: string; // Legacy field for plain HTML content
+  sections?: PostSection[];
+  videoAttachments?: string[]; // IDs of REAL_VIDEOS
   featuredImage: string;
   category: Category;
   author: Author;
@@ -152,6 +163,26 @@ export const AUTHORS: Author[] = [
 
 
 export const POSTS: Post[] = [
+{
+  id: 'p-demo',
+  title: 'Demo: All Article Writing Tools in Action',
+  slug: 'demo-article-writing-tools',
+  excerpt: 'See all the new article writing tools—callout, fact box, code block, and stylish quote—demonstrated in one place.',
+  content: `
+    <p>This demo article showcases all the new writing tools available in the RenewBerry editor. Use these to make your articles more engaging and visually appealing!</p>
+    <div class='callout-box bg-blue-50 border-l-4 border-blue-400 p-4 my-4 rounded-xl'><strong>💡 Tip:</strong> <span>Use callout boxes to highlight important information or tips for your readers.</span></div>
+    <div class='fact-box bg-yellow-50 border-l-4 border-yellow-400 p-4 my-4 rounded-xl'><strong>🤔 Did You Know?</strong> <span>You can now add fun facts or trivia to your articles with a single click!</span></div>\n    <pre class='code-block bg-gray-900 text-white p-4 my-4 rounded-xl overflow-x-auto'><code>// Easily share code snippets or technical examples\nfunction greet(name) {\n  return \`Hello, ${name}!\`;\n}</code></pre>\n    <blockquote class='fancy-quote border-l-4 border-purple-400 pl-4 italic text-lg my-4 text-purple-700'>“Great writing is rewriting.”</blockquote>
+    <p>Try these tools in your next article!</p>
+  `,
+  featuredImage: 'https://picsum.photos/seed/demopost/1200/600',
+  category: CATEGORIES[0],
+  author: AUTHORS[0],
+  tags: ['Demo', 'Writing Tools', 'Editor'],
+  publishedAt: '2026-03-23T10:00:00Z',
+  readTime: '2 min read',
+  isFeatured: true,
+  isTrending: false
+},
 {
   id: 'p1',
   title: 'The Dawn of a New Era for Creators: Introducing RenewBerry',

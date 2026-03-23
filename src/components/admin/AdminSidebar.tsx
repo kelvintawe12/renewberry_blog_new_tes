@@ -96,18 +96,13 @@ export function AdminSidebar({
         className={`fixed top-0 left-0 bottom-0 w-64 bg-secondary text-white z-50 transition-transform duration-300 ease-in-out lg:translate-x-0 flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
 
         <div className="p-6 flex items-center gap-3 border-b border-white/10">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 100 100"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-
-            <circle cx="50" cy="55" r="35" fill="#0891B2" />
-            <path d="M50 20 C40 10, 30 20, 50 35" fill="#4ADE80" />
-            <path d="M50 20 C60 10, 70 20, 50 35" fill="#22C55E" />
-            <path d="M50 20 C50 5, 65 5, 50 35" fill="#16A34A" />
-          </svg>
+          <img
+            src="/image.png"
+            alt="RenewBerry Logo"
+            width={32}
+            height={32}
+            className="rounded shadow bg-white"
+          />
           <div>
             <span className="block font-heading font-bold text-lg leading-tight">
               RenewBerry

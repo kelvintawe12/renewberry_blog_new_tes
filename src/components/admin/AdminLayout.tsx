@@ -18,7 +18,7 @@ export function AdminLayout() {
 
       <div className="flex-1 lg:ml-64 flex flex-col min-h-screen min-w-0 transition-all duration-300">
         {/* Topbar */}
-        <header className="h-16 bg-white/80 backdrop-blur-md border-b border-gray-200 flex items-center justify-between px-4 lg:px-8 sticky top-0 z-30">
+<header className="h-16 bg-white/80 backdrop-blur-md border-b border-gray-200 flex items-center justify-between px-4 lg:px-8 fixed top-0 left-0 right-0 z-50 shadow-sm">
           <div className="flex items-center gap-4">
             <button
               onClick={() => setIsSidebarOpen(true)}
@@ -77,7 +77,7 @@ export function AdminLayout() {
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 p-4 lg:p-8 overflow-x-hidden overflow-y-auto">
+        <main className="flex-1 pt-20 lg:pt-20 p-4 lg:p-8 overflow-x-hidden overflow-y-auto">
           <div className="max-w-7xl mx-auto w-full">
             <Outlet />
           </div>

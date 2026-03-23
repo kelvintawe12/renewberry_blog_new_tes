@@ -12,7 +12,9 @@ import {
   Phone,
   ArrowRight,
   Heart,
-  Sparkles } from
+  Sparkles,
+  LogIn
+ } from
 'lucide-react';
 import { CATEGORIES } from '../data/mockData';
 // Animated background particles
@@ -92,8 +94,6 @@ function FooterParticles() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-none" />);
-
-
 }
 export function BlogFooter() {
   const currentYear = new Date().getFullYear();
@@ -438,6 +438,16 @@ export function BlogFooter() {
                 hello@renewberry.io
               </a>
             </div>
+            {/* Admin Login Link */}
+            <div className="mt-4 pt-4 border-t border-white/10">
+              <Link
+                to="/auth/login"
+                className="flex items-center gap-2 text-teal-100/70 hover:text-white text-sm transition-colors font-medium">
+
+                <LogIn className="w-4 h-4" />
+                Admin Login
+              </Link>
+            </div>
           </motion.div>
         </motion.div>
       </div>
@@ -468,5 +478,4 @@ export function BlogFooter() {
         </div>
       </div>
     </footer>);
-
 }
