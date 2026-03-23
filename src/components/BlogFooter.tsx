@@ -198,38 +198,20 @@ export function BlogFooter() {
           {/* Brand Column - Takes 2 cols on lg */}
           <motion.div variants={itemVariants} className="col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6 group">
-              <svg
-                width="44"
-                height="44"
-                viewBox="0 0 100 100"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="group-hover:scale-105 transition-transform flex-shrink-0">
-
-                <defs>
-                  <linearGradient
-                    id="berryGradFooter"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%">
-
-                    <stop offset="0%" stopColor="#0891B2" />
-                    <stop offset="100%" stopColor="#06B6D4" />
-                  </linearGradient>
-                </defs>
-                <circle cx="50" cy="55" r="35" fill="url(#berryGradFooter)" />
-                <path d="M50 20 C40 10, 30 20, 50 35" fill="#4ADE80" />
-                <path d="M50 20 C60 10, 70 20, 50 35" fill="#22C55E" />
-                <path d="M50 20 C50 5, 65 5, 50 35" fill="#16A34A" />
-              </svg>
+              <img
+              src="/image.png"
+              alt="RenewBerry Logo"
+              width={44}
+              height={44}
+              className="group-hover:scale-105 transition-transform flex-shrink-0 rounded-full object-cover"
+              />
               <div className="flex flex-col justify-center">
-                <span className="font-heading text-[0.65rem] leading-none tracking-[0.2em] uppercase text-teal-300 font-bold">
-                  GoodMorningDewPub
-                </span>
-                <span className="font-heading font-bold text-2xl leading-none text-white tracking-tight mt-1">
-                  RenewBerry
-                </span>
+              <span className="font-heading text-[0.65rem] leading-none tracking-[0.2em] uppercase text-teal-300 font-bold">
+                GoodMorningDewPub
+              </span>
+              <span className="font-heading font-bold text-2xl leading-none text-white tracking-tight mt-1">
+                RenewBerry
+              </span>
               </div>
             </Link>
             <p className="text-teal-100/80 mb-6 max-w-xs leading-relaxed text-sm">
