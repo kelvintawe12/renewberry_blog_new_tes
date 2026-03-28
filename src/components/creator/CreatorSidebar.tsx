@@ -6,6 +6,7 @@ import {
   UploadIcon,
   FileTextIcon,
   PenToolIcon,
+  SparklesIcon,
   BarChart3Icon,
   DollarSignIcon,
   UserIcon,
@@ -42,7 +43,13 @@ const NAV_ITEMS = [
   icon: PenToolIcon
 },
 {
+  name: 'Pro Editor',
+  path: '/creator/editor',
+  icon: SparklesIcon
+},
+{
   name: 'Analytics',
+
   path: '/creator/analytics',
   icon: BarChart3Icon
 },
@@ -75,13 +82,13 @@ export function CreatorSidebar({
       {/* Mobile overlay */}
       {isOpen &&
       <div
-        className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
+        className="fixed inset-0 top-16 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
         onClick={() => setIsOpen(false)} />
 
       }
 
       <aside
-        className={`fixed top-0 left-0 bottom-0 w-64 bg-white border-r border-gray-200 z-50 transition-transform duration-300 ease-in-out lg:translate-x-0 flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        className={`fixed top-16 left-0 bottom-0 w-64 bg-white border-r border-gray-200 z-50 transition-transform duration-300 ease-in-out lg:translate-x-0 flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
 
         <div className="p-6 flex items-center gap-3 border-b border-gray-100">
           <svg
@@ -156,13 +163,13 @@ export function CreatorSidebar({
             <button
               onClick={logout}
               className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-              title="Logout">
-
+              title="Logout"
+            >
               <LogOutIcon className="w-5 h-5" />
             </button>
           </div>
         </div>
       </aside>
-    </>);
-
+    </>
+  );
 }

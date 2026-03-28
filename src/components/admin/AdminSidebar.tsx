@@ -12,6 +12,7 @@ import {
   MegaphoneIcon,
   BarChart3Icon,
   SettingsIcon,
+  SparklesIcon,
   ExternalLinkIcon,
   LogOutIcon } from
 'lucide-react';
@@ -22,6 +23,11 @@ const NAV_ITEMS = [
   path: '/admin',
   icon: LayoutDashboardIcon,
   end: true
+},
+{
+  name: 'Pro Editor',
+  path: '/pro-editor',
+  icon: SparklesIcon
 },
 {
   name: 'Videos',
@@ -87,13 +93,13 @@ export function AdminSidebar({
       {/* Mobile overlay */}
       {isOpen &&
       <div
-        className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+        className="fixed inset-0 top-16 bg-black/50 z-40 lg:hidden"
         onClick={() => setIsOpen(false)} />
 
       }
 
       <aside
-        className={`fixed top-0 left-0 bottom-0 w-64 bg-secondary text-white z-50 transition-transform duration-300 ease-in-out lg:translate-x-0 flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        className={`fixed top-16 left-0 bottom-0 w-64 bg-secondary text-white z-50 transition-transform duration-300 ease-in-out lg:translate-x-0 flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
 
         <div className="p-6 flex items-center gap-3 border-b border-white/10">
           <img

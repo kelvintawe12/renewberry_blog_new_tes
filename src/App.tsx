@@ -21,6 +21,7 @@ import { VideoFeed } from './pages/VideoFeed';
 import { GalleryPage } from './pages/GalleryPage';
 import { GalleryDetail } from './pages/GalleryDetail';
 import { MousePlayground } from './pages/MousePlayground';
+import { EditorPlayground } from './pages/EditorPlayground';
 // Auth Pages
 import { LoginPage } from './pages/auth/LoginPage';
 // Admin Layout & Pages
@@ -99,6 +100,16 @@ export function App() {
             <Route path="team" element={<AdminTeam />} />
             <Route path="settings" element={<AdminSettings />} />
           </Route>
+
+          {/* Pro Editor - Unwrapped */}
+          <Route
+            path="/pro-editor"
+            element={
+              <ProtectedRoute allowedRoles={['admin', 'creator']}>
+                <EditorPlayground />
+              </ProtectedRoute>
+            }
+          />
 
           {/* Creator Routes */}
           <Route
