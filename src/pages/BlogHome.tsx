@@ -103,7 +103,7 @@ export function BlogHome() {
   return (
     <main className="min-h-screen bg-gray-50 relative overflow-hidden">
       {/* WebGL Fluid Cursor Effect */}
-      <SplashCursor />
+      {/* <SplashCursor /> */}
 
       <div className="relative z-10">
         <HeroSection />
