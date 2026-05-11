@@ -20,7 +20,7 @@ import { ContactPage } from './pages/ContactPage';
 import { VideoFeed } from './pages/VideoFeed';
 import { GalleryPage } from './pages/GalleryPage';
 import { GalleryDetail } from './pages/GalleryDetail';
-import { MousePlayground } from './pages/MousePlayground';
+// import { MousePlayground } from './pages/MousePlayground';
 import { EditorPlayground } from './pages/EditorPlayground';
 // Auth Pages
 import { LoginPage } from './pages/auth/LoginPage';
@@ -151,7 +151,7 @@ export function App() {
                   <Route path="/videos" element={<VideoFeed />} />
                   <Route path="/gallery" element={<GalleryPage />} />
                   <Route path="/gallery/:slug" element={<GalleryDetail />} />
-                  <Route path="/playground" element={<MousePlayground />} />
+                  {/* <Route path="/playground" element={<MousePlayground />} /> */}
                   <Route path="*" element={<BlogHome />} />
                 </Routes>
               </PublicLayout>
