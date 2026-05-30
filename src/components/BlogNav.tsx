@@ -132,12 +132,7 @@ export function BlogNav() {
 
                     About
                   </NavLink>
-                  <NavLink
-                    to="/team"
-                    className="block px-4 py-2 text-sm text-text-secondary hover:bg-gray-50 hover:text-primary">
-
-                    Team
-                  </NavLink>
+                
                   <NavLink
                     to="/partners"
                     className="block px-4 py-2 text-sm text-text-secondary hover:bg-gray-50 hover:text-primary">
@@ -149,6 +144,12 @@ export function BlogNav() {
                     className="block px-4 py-2 text-sm text-text-secondary hover:bg-gray-50 hover:text-primary">
 
                     Contact
+                  </NavLink>
+                  <NavLink
+                    to="/team"
+                    className="block px-4 py-2 text-sm text-text-secondary hover:bg-gray-50 hover:text-primary">
+
+                    New Team Page
                   </NavLink>
                 </div>
               </div>

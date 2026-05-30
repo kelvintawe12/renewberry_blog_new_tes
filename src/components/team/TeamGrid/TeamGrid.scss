@@ -1,0 +1,33 @@
+.teamGrid {
+  padding: 6rem 4rem;
+  background: #f8fafc;
+
+  &__wrapper {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1100px) {
+  .teamGrid {
+    &__wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .teamGrid {
+    padding: 4rem 1.25rem;
+
+    &__wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+}

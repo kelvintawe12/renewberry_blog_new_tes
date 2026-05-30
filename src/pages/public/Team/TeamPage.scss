@@ -1,0 +1,141 @@
+.teamPage {
+  min-height: 100vh;
+  background: #f8fafc;
+  overflow: hidden;
+
+  // smooth rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // container utility
+  .container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    @media (max-width: 768px) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  // section spacing
+  section {
+    position: relative;
+  }
+
+  // reusable section heading
+  &__sectionHeader {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #64748b;
+    }
+  }
+
+  // premium glass background utility
+  &__glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    box-shadow:
+      0 10px 40px rgba(15, 23, 42, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  // decorative blurred gradient
+  &__blur {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(120px);
+    z-index: 0;
+    pointer-events: none;
+
+    &--primary {
+      width: 400px;
+      height: 400px;
+      background: rgba(20, 184, 166, 0.18);
+      top: -120px;
+      left: -120px;
+    }
+
+    &--secondary {
+      width: 500px;
+      height: 500px;
+      background: rgba(59, 130, 246, 0.12);
+      bottom: -200px;
+      right: -200px;
+    }
+  }
+
+  // fade-in animation
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fadeUp {
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  // empty state styling
+  &__empty {
+    padding: 6rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+
+    background: white;
+    border: 1px dashed #cbd5e1;
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: #64748b;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+  }
+
+  // spacing between sections
+  > section:not(:first-child) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    @media (max-width: 768px) {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+}
