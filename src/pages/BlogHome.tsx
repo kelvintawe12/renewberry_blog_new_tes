@@ -4,7 +4,7 @@ import { HeroSection } from '../components/HeroSection';
 import { CategoryTile } from '../components/CategoryTile';
 import { PostCard } from '../components/PostCard';
 import { SubscribeCTA } from '../components/SubscribeCTA';
-import { SplashCursor } from '../components/SplashCursor';
+// import { SplashCursor } from '../components/SplashCursor';
 import {
   CATEGORIES,
   POSTS,

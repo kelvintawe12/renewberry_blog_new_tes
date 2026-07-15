@@ -15,12 +15,12 @@ import { SearchResults } from './pages/SearchResults';
 import { TagPage } from './pages/TagPage';
 import { AboutPage } from './pages/AboutPage';
 import { PartnersPage } from './pages/PartnersPage';
-import { TeamPage } from './pages/TeamPage';
+// import { TeamPage } from './pages/TeamPage';
 import { ContactPage } from './pages/ContactPage';
 import { VideoFeed } from './pages/VideoFeed';
 import { GalleryPage } from './pages/GalleryPage';
 import { GalleryDetail } from './pages/GalleryDetail';
-import { MousePlayground } from './pages/MousePlayground';
+// import { MousePlayground } from './pages/MousePlayground';
 import { EditorPlayground } from './pages/EditorPlayground';
 // Auth Pages
 import { LoginPage } from './pages/auth/LoginPage';
@@ -37,7 +37,7 @@ import { AdminHandbook } from './pages/admin/AdminHandbook';
 import { AdminBrandVoice } from './pages/admin/AdminBrandVoice';
 import { AdminSettings } from './pages/admin/AdminSettings';
 import { AdminAnalytics } from './pages/admin/AdminAnalytics';
-import { AdminTeam } from './pages/admin/AdminTeam';
+// import { AdminTeam } from './pages/admin/AdminTeam';
 // Creator Layout & Pages
 import { CreatorLayout } from './components/creator/CreatorLayout';
 import { CreatorDashboard } from './pages/creator/CreatorDashboard';
@@ -49,6 +49,12 @@ import { CreatorAnalytics } from './pages/creator/CreatorAnalytics';
 import { CreatorEarnings } from './pages/creator/CreatorEarnings';
 import { CreatorProfile } from './pages/creator/CreatorProfile';
 import { CreatorSettings } from './pages/creator/CreatorSettings';
+
+
+import TeamPage from './pages/public/Team/TeamPage';
+import TeamMemberPage from './pages/public/TeamMember/TeamMemberPage';
+
+
 // Scroll to top on route change
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -97,7 +103,7 @@ export function App() {
             <Route path="handbook" element={<AdminHandbook />} />
             <Route path="brand-voice" element={<AdminBrandVoice />} />
             <Route path="analytics" element={<AdminAnalytics />} />
-            <Route path="team" element={<AdminTeam />} />
+            {/* <Route path="team" element={<AdminTeam />} /> */}
             <Route path="settings" element={<AdminSettings />} />
           </Route>
 
@@ -130,32 +136,92 @@ export function App() {
             <Route path="earnings" element={<CreatorEarnings />} />
             <Route path="profile" element={<CreatorProfile />} />
             <Route path="settings" element={<CreatorSettings />} />
+            
           </Route>
 
           {/* Public Routes */}
-          <Route
-            path="/*"
-            element={
-            <PublicLayout>
-                <Routes>
-                  <Route path="/" element={<BlogHome />} />
-                  <Route path="/category/:slug" element={<CategoryPage />} />
-                  <Route path="/post/:slug" element={<SinglePost />} />
-                  <Route path="/author/:username" element={<AuthorPage />} />
-                  <Route path="/search" element={<SearchResults />} />
-                  <Route path="/tag/:tag" element={<TagPage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/team" element={<TeamPage />} />
-                  <Route path="/partners" element={<PartnersPage />} />
-                  <Route path="/contact" element={<ContactPage />} />
-                  <Route path="/videos" element={<VideoFeed />} />
-                  <Route path="/gallery" element={<GalleryPage />} />
-                  <Route path="/gallery/:slug" element={<GalleryDetail />} />
-                  <Route path="/playground" element={<MousePlayground />} />
-                  <Route path="*" element={<BlogHome />} />
-                </Routes>
-              </PublicLayout>
-            } />
+        {/* Public Routes */}
+{/* Public Routes */}
+<Route
+  path="/*"
+  element={
+    <PublicLayout>
+      <Routes>
+        <Route path="/" element={<BlogHome />} />
+
+        <Route
+          path="/category/:slug"
+          element={<CategoryPage />}
+        />
+
+        <Route
+          path="/post/:slug"
+          element={<SinglePost />}
+        />
+
+        <Route
+          path="/author/:username"
+          element={<AuthorPage />}
+        />
+
+        <Route
+          path="/team"
+          element={<TeamPage />}
+        />
+
+        <Route
+          path="/team/:slug"
+          element={<TeamMemberPage />}
+        />
+
+        <Route
+          path="/search"
+          element={<SearchResults />}
+        />
+
+        <Route
+          path="/tag/:tag"
+          element={<TagPage />}
+        />
+
+        <Route
+          path="/about"
+          element={<AboutPage />}
+        />
+
+        <Route
+          path="/partners"
+          element={<PartnersPage />}
+        />
+
+        <Route
+          path="/contact"
+          element={<ContactPage />}
+        />
+
+        <Route
+          path="/videos"
+          element={<VideoFeed />}
+        />
+
+        <Route
+          path="/gallery"
+          element={<GalleryPage />}
+        />
+
+        <Route
+          path="/gallery/:slug"
+          element={<GalleryDetail />}
+        />
+
+        <Route
+          path="*"
+          element={<BlogHome />}
+        />
+      </Routes>
+    </PublicLayout>
+  }
+/>
 
         </Routes>
       </BrowserRouter>

@@ -28,5 +28,4 @@ export function BackgroundAnimation({
         }}>
       </div>
     </div>);
-
 }

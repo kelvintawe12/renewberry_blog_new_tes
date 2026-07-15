@@ -1,0 +1,220 @@
+.teamMemberPage {
+  background: #020617;
+
+  min-height: 100vh;
+
+  color: white;
+}
+
+/* HERO */
+
+.teamMemberHero {
+  position: relative;
+
+  padding: 8rem 4rem;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(20, 184, 166, 0.2),
+      transparent 40%
+    ),
+    #020617;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+
+    backdrop-filter: blur(120px);
+  }
+
+  &__content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 320px 1fr;
+
+    gap: 4rem;
+
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 420px;
+
+      object-fit: cover;
+
+      border-radius: 30px;
+
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    span {
+      display: inline-flex;
+
+      background: rgba(20,184,166,0.15);
+
+      color: #2dd4bf;
+
+      padding: 0.5rem 1rem;
+
+      border-radius: 999px;
+
+      font-size: 0.9rem;
+
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 4rem;
+
+      font-weight: 900;
+
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      color: #2dd4bf;
+
+      margin-bottom: 2rem;
+    }
+
+    p {
+      max-width: 700px;
+
+      line-height: 1.9;
+
+      color: rgba(255,255,255,0.75);
+
+      font-size: 1.05rem;
+    }
+  }
+}
+
+/* SOCIALS */
+
+.teamMemberSocials {
+  display: flex;
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+
+  a {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(255,255,255,0.06);
+
+    color: white;
+
+    transition: 0.3s ease;
+
+    &:hover {
+      background: #14b8a6;
+
+      transform: translateY(-5px);
+    }
+  }
+}
+
+/* DETAILS */
+
+.teamMemberDetails {
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 5rem 4rem;
+}
+
+.teamMemberBlock {
+  margin-top:5%;
+
+  h3 {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.8rem;
+
+    font-size: 2rem;
+
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    display: grid;
+
+    gap: 1rem;
+
+    li {
+      background: rgba(255,255,255,0.04);
+
+      padding: 1.2rem;
+
+      border-radius: 18px;
+
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+  }
+}
+
+.expertiseTags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  span {
+    background: rgba(20,184,166,0.15);
+
+    color: #2dd4bf;
+
+    padding: 0.8rem 1.2rem;
+
+    border-radius: 999px;
+
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 900px) {
+  .teamMemberHero {
+    padding: 5rem 1.5rem;
+
+    &__content {
+      grid-template-columns: 1fr;
+
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      img {
+        height: 360px;
+      }
+    }
+  }
+
+  .teamMemberDetails {
+    padding: 4rem 1.5rem;
+  }
+}

@@ -123,5 +123,4 @@ export function FloatingActions() {
         }
       </AnimatePresence>
     </div>);
-
 }
