@@ -15,14 +15,13 @@ export interface TeamMember {
 
   expertise: string[];
 
-
   website?: string;
 
-facebook?: string;
+  facebook?: string;
 
-linkedin?: string;
+  linkedin?: string;
 
-twitter?: string;
+  twitter?: string;
 
-achievements: string[];
+  achievements: string[];
 }

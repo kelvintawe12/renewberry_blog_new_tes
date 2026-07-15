@@ -1,6 +1,6 @@
 .teamHero {
-  min-height: 400px;
-  background: #111827;
+  min-height: 100px;
+  background: #2b9bcc;
   color: white;
   padding: 4rem;
 
@@ -14,4 +14,16 @@
     height: 50px;
     padding: 1rem;
   }
+}
+
+.container{
+  // background-color: red;
+  width: fit-content;
+  margin: 0 auto
+  
+}
+
+.team-descriptor{
+  margin-top: -2rem;
+margin-left: 10%;
 }

@@ -4,6 +4,8 @@ const filters = [
   'All',
   'Leadership',
   'Engineering',
+  'Administration',
+  'System Security'
 ];
 
 interface Props {

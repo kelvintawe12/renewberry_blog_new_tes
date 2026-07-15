@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import './TeamMemberPage.scss';
 
 import {
   Globe,
@@ -10,7 +11,7 @@ import {
 
 import { teamMembers } from '../../../services/team.service';
 
-import './TeamMemberPage.scss';
+
 
 export default function TeamMemberPage() {
   const { slug } = useParams();
